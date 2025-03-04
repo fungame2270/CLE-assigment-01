@@ -17,6 +17,7 @@ private:
 
     std::mutex queue_mutex;
     std::condition_variable condition;
+    std::condition_variable taskFinish;
     bool stop;
 
     void worker_thread();
@@ -24,8 +25,18 @@ public:
     ThreadPool(size_t num_threads);
     ~ThreadPool();
 
-    template<typename F,typename... Args>
-    auto enqueue(F&& f,Args&&... args) -> std::future<typename std::invoke_result<F,Args...>::type>;
+    void join();
+
+    template <typename F, typename... Args>
+    void enqueue(F&& f, Args&&... args) {
+
+        tasks.push([f = std::forward<F>(f), ...args = std::forward<Args>(args)]() {
+            f(args...);
+        });
+        
+        condition.notify_one();
+    
+    };
 };
 
 #endif

@@ -3,6 +3,7 @@ project(cle-weather-stations CXX)
 
 add_executable(cle-ws
     src/main.cpp
+    src/threadPool.cpp
     # Add your files here if needed.
 )
 target_compile_features(cle-ws PRIVATE cxx_std_20)

@@ -190,6 +190,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cle-ws.dir/build.make CMakeFiles/cle-ws.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/threadPool.o: src/threadPool.cpp.o
+.PHONY : src/threadPool.o
+
+# target to build an object file
+src/threadPool.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cle-ws.dir/build.make CMakeFiles/cle-ws.dir/src/threadPool.cpp.o
+.PHONY : src/threadPool.cpp.o
+
+src/threadPool.i: src/threadPool.cpp.i
+.PHONY : src/threadPool.i
+
+# target to preprocess a source file
+src/threadPool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cle-ws.dir/build.make CMakeFiles/cle-ws.dir/src/threadPool.cpp.i
+.PHONY : src/threadPool.cpp.i
+
+src/threadPool.s: src/threadPool.cpp.s
+.PHONY : src/threadPool.s
+
+# target to generate assembly for a file
+src/threadPool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cle-ws.dir/build.make CMakeFiles/cle-ws.dir/src/threadPool.cpp.s
+.PHONY : src/threadPool.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -206,6 +230,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/threadPool.o"
+	@echo "... src/threadPool.i"
+	@echo "... src/threadPool.s"
 .PHONY : help
 
 
